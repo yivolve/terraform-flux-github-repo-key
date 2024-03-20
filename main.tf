@@ -17,7 +17,7 @@ resource "aws_secretsmanager_secret" "this" {
   tags                    = var.tags
 }
 
-resource "aws_secretsmanager_secret_version" "flux_secret_version" {
+resource "aws_secretsmanager_secret_version" "this" {
   secret_id     = aws_secretsmanager_secret.this.id
   secret_string = jsonencode(tls_private_key.this.private_key_pem)
   lifecycle {
